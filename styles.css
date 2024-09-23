@@ -56,7 +56,10 @@ body::before {
     height: 220px;
     cursor: pointer;
 }
-
+#fidget1:focus,
+#fidget2:focus {
+    outline: none;
+}
 .circle{
     width: 100px;
     height:100px;
