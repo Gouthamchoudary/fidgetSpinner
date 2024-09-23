@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-image:url(media/backdrop.avif) ;
     background-size: cover;
-
+    overflow:hidden;
     color: white; /* Ensure text is visible on the gradient background */
 }
 @font-face {
@@ -36,13 +36,27 @@ body::before {
 
 #fidget1 {
     position: absolute;
-    top: 25%;
-    left: 27%;
+    left: -15%;
     width:220px;
     height: 220px;
     cursor: pointer;
     transform-origin: 50% 56%;
 }
+
+.fidget-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between the two fidget spinners */
+}
+
+#fidget1, #fidget2 {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+}
+
 .circle{
     width: 100px;
     height:100px;
@@ -76,9 +90,8 @@ body::before {
     transform: translate(-50%, -50%);
 }
 #fidget2{
-    position: absolute;
-    top: 60%;
-    left: 27%;
+
+    left: 23%;
     width:220px;
 
     height: 220px;
@@ -108,4 +121,17 @@ body::before {
 
 .spin {
     animation: spin 7s cubic-bezier(0.33, 1, 0.68, 1);
+}
+@media (min-width: 600px) {
+    .fidget-container {
+        flex-direction: row;
+    }
+}
+@media (max-width: 600px) {
+    .fidget-container {
+        flex-direction: column;
+    }
+    #fidget1{
+        align-items: center;
+    }
 }
